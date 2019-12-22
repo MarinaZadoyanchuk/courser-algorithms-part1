@@ -1,0 +1,28 @@
+{
+  "name": "coursera",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "mocha -r ts-node/register 'src/**/*.test.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarinaZadoyanchuk/courser-algorithms-part1.git"
+  },
+  "author": "Marina Zadoyanchuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarinaZadoyanchuk/courser-algorithms-part1/issues"
+  },
+  "homepage": "https://github.com/MarinaZadoyanchuk/courser-algorithms-part1#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.6",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.2"
+  }
+}
