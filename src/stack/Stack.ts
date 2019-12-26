@@ -1,27 +1,27 @@
-class ListNode {
-  value: string
-  next: ListNode = null
+class ListNode<Item> {
+  value: Item
+  next: ListNode<Item> = null
 
   constructor(value) {
     this.value = value
   }
 
-  setNext(node: ListNode | null) {
+  setNext(node: ListNode<Item> | null) {
     this.next = node
   }
 }
 
 // stack with linked list
-export class Stack {
-  private list: ListNode = null
+export class Stack<Item> {
+  private list: ListNode<Item> = null
 
-  push(value: string): void {
-    const newNode = new ListNode(value)
+  push(value: Item): void {
+    const newNode = new ListNode<Item>(value)
     newNode.setNext(this.list)
     this.list = newNode
   }
 
-  pop(): string {
+  pop(): Item {
     if (this.isEmpty()) {
       return null
     }
