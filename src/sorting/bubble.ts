@@ -1,10 +1,12 @@
-export function bubbleSort(array: Array<number>) {
+import {CompareInterface} from './compares'
+
+export function bubbleSort<T>(array: T [], compare: CompareInterface<T>): {array: T [], swapCount: number} {
   let swapped = true
   let swapCount = 0
   while(swapped) {
     swapped = false
     for(let i = 0; i < array.length - 1; i++) {
-      if (array[i] > array[i + 1]) {
+      if (compare(array[i], array[i + 1]) > 0) {
         swapped = true
         swapCount++
         const temp = array[i]
