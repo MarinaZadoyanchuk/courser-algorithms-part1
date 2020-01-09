@@ -4,7 +4,6 @@ enum compareResult {
   equals = 0
 }
 
-
 export interface CompareInterface<T> {
   (a: T, b: T): compareResult
 }
