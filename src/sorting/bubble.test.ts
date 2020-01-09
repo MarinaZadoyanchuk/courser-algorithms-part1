@@ -1,6 +1,9 @@
 import {bubbleSort} from './bubble'
 import {compareNumbers} from './compares'
+import performanceWrapper from '../utils/performance-wrapper'
 import {expect} from 'chai'
+
+// const logBubbleSort = performanceWrapper(bubbleSort)
 
 describe('bubble sort', () => {
   it('sort array', () => {
