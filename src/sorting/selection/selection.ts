@@ -1,4 +1,4 @@
-import {CompareInterface} from './compares'
+import {CompareInterface} from '../compares'
 export function selectionSort<T>(array: T [], compare: CompareInterface<T>): T [] {
   let i = 0
 

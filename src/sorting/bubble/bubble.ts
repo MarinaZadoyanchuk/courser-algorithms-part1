@@ -1,4 +1,4 @@
-import {CompareInterface} from './compares'
+import {CompareInterface} from '../compares'
 
 export function bubbleSort<T>(array: T [], compare: CompareInterface<T>): {array: T [], swapCount: number} {
   let swapped = true

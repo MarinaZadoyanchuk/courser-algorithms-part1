@@ -1,5 +1,5 @@
 import {selectionSort} from './selection'
-import {compareNumbers} from './compares'
+import {compareNumbers} from '../compares'
 import {expect} from 'chai'
 
 describe('selection sort', () => {
