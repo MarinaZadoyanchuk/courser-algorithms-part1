@@ -1,9 +1,9 @@
-import {merge, isSorted, mergeSort} from './mergesort'
+import {merge, isSorted, mergeSort, bottomUpMergeSort} from './mergesort'
 import {shuffle} from '../shuffle/shuffle'
 import {compareNumbers} from '../compares'
 import {expect} from 'chai'
 
-describe.only('mergesort', () => {
+describe('mergesort', () => {
   describe('merge', () => {
     it('works with empty arrays', () => {
       expect(merge([], [], compareNumbers)).to.eql([])
@@ -40,24 +40,28 @@ describe.only('mergesort', () => {
     })
   })
 
-  describe('merge sort', () => {
+  describe('merge sort and bottom-up version', () => {
     const expected = Array(12).fill(0).map((el, index) => index)
 
 
     it('sort array 1', () => {
       expect(mergeSort(shuffle(expected), compareNumbers)).to.eql(expected)
+      expect(bottomUpMergeSort(shuffle(expected), compareNumbers)).to.eql(expected)
     })
 
     it('sort array 2', () => {
       expect(mergeSort(shuffle(expected), compareNumbers)).to.eql(expected)
+      expect(bottomUpMergeSort(shuffle(expected), compareNumbers)).to.eql(expected)
     })
 
     it('sort already sorted array', () => {
       expect(mergeSort(expected, compareNumbers)).to.eql(expected)
+      expect(bottomUpMergeSort(expected, compareNumbers)).to.eql(expected)
     })
 
     it('sort empty array', () => {
       expect(mergeSort([], compareNumbers)).to.eql([])
+      expect(bottomUpMergeSort([], compareNumbers)).to.eql([])
     })
   })
 })

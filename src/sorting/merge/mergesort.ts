@@ -61,3 +61,24 @@ export function mergeSort<T>(array: T [], compare: CompareInterface<T>): T [] {
 
   return merge(sorted1, sorted2, compare)
 }
+
+export function bottomUpMergeSort<T>(array: T [], compare: CompareInterface<T>): T [] {
+  let sz = 1
+  let result = [...array]
+  while (sz < array.length) {
+    let i = 0
+    while(i < array.length - sz) {
+      const array1 = result.slice(i, i + sz)
+      const array2 = result.slice(i + sz, i + 2 * sz)
+      const merged = merge(array1, array2, compare)
+
+      for (let j = 0; j < merged.length; j++) {
+        result[i + j] = merged[j]
+      }
+      i += sz * 2
+    }
+    sz += sz
+  }
+  
+  return result
+}
