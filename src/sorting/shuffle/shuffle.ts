@@ -1,15 +1,14 @@
 // shuffle without sort
 export function shuffle<T>(array: T []): T [] {
   let i = 0
-  while(i < array.length) {
+  const shuffled = [...array]
+  while(i < shuffled.length) {
     const r = Math.floor(Math.random() * (i + 1))
-    const temp = array[i]
-    array[i] = array[r]
-    array[r] = temp
+    const temp = shuffled[i]
+    shuffled[i] = shuffled[r]
+    shuffled[r] = temp
     i++
   }
 
-  return array
+  return shuffled
 }
-
-console.log(shuffle([1, 2, 3, 4]))

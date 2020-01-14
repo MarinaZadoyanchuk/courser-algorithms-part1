@@ -2,7 +2,7 @@ import {shellSort} from './shellsort'
 import {compareNumbers} from '../compares'
 import {expect} from 'chai'
 
-describe.only('shell sort', () => {
+describe('shell sort', () => {
   it('sort array', () => {
     const expectedRes = [5, 7, 8, 9, 13, 22, 31]
     const input = [8, 22, 7, 9, 31, 5, 13]
