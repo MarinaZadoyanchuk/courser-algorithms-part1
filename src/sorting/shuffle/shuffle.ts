@@ -1,3 +1,4 @@
+// shuffle without sort
 export function shuffle<T>(array: T []): T [] {
   let i = 0
   while(i < array.length) {
