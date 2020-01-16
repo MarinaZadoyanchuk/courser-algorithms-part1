@@ -2,7 +2,7 @@ import {compareNumbers} from '../compares'
 import {quickSelection} from './quick-selection'
 import {expect} from 'chai'
 
-describe.only('quickSelection', () => {
+describe('quickSelection', () => {
   it('get kth sorted element', () => {
     const input = [1, 2, 3, 4, 5, 6, 7]
     expect(quickSelection(input, 3, compareNumbers)).equals(4)
