@@ -1,7 +1,6 @@
 import {CompareInterface} from '../compares'
 import {partition} from './partition'
 import {shuffle} from '../shuffle/shuffle'
-import {strict as assert} from 'assert'
 
 export function quickSelection<T>(array: T [], k, compare: CompareInterface<T>): T {
   const shuffled = shuffle(array)

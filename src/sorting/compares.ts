@@ -1,8 +1,4 @@
-enum compareResult {
-  more = 1,
-  less = -1,
-  equals = 0
-}
+import {compareResult} from '../interfaces/comparable.interface'
 
 export interface CompareInterface<T> {
   (a: T, b: T): compareResult

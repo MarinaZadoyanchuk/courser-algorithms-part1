@@ -1,5 +1,5 @@
 import swap from '../utils/swap'
-import {PQMaxInterface, PQMinInterface} from './PQInterfaces'
+import {PQMaxInterface, PQMinInterface} from '../interfaces/pq.interface'
 
 export class Heap {
   pq: number [] = [,] // starts from 1
