@@ -1,16 +1,16 @@
 import {ComparableInterface} from '../../interfaces/comparable.interface'
 import STInterface from '../../interfaces/st.interface'
-import {Node} from './node'
+import {Node, colors} from '../node'
 
 export class BST<Key extends ComparableInterface<Key>, Value> implements STInterface<Key, Value> {
-  private root: Node<Key, Value> = null
+  protected root: Node<Key, Value> = null
 
   public put(key: Key, value: Value) {
     this.root = this.innerPut(this.root, key, value)
   }
 
-  private innerPut(x: Node<Key, Value>, key: Key, value: Value): Node<Key, Value> {
-    if (x === null) return new Node(key, value)
+  protected innerPut(x: Node<Key, Value>, key: Key, value: Value, color: colors = colors.black): Node<Key, Value> {
+    if (x === null) return new Node(key, value, color)
 
     const cmp = key.compareTo(x.key)
 
@@ -140,7 +140,7 @@ export class BST<Key extends ComparableInterface<Key>, Value> implements STInter
     return this.getNodeSize(this.root)
   }
 
-  private getNodeSize(x: Node<Key, Value>): number {
+  protected getNodeSize(x: Node<Key, Value>): number {
     if (x === null) return 0
 
     return x.count

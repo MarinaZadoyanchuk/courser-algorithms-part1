@@ -1,31 +1,10 @@
-import {BST} from './bst'
-import { ComparableInterface } from '../../interfaces/comparable.interface'
+import {RedBlackBST} from './red-black-bst'
+import {ComparableString} from '../comparable-string'
 import {shuffle} from '../../sorting/shuffle/shuffle'
 import {expect} from 'chai'
 
-class ComparableString extends String implements ComparableInterface<String> {
-  private str: String
-
-  constructor(str: String) {
-    super(str)
-    this.str = str
-  }
-
-  compareTo(another: String) {
-    if (this.str > another) {
-      return 1
-    }
-
-    if (this.str < another) {
-      return -1
-    }
-
-    return 0
-  }
-}
-
-describe('Binary Search Tree', () => {
-  const bst = new BST<ComparableString, String>()
+describe('Read Black BST', () => {
+  const bst = new RedBlackBST<ComparableString, String>()
   it('put, get and contains value', () => {
     expect(bst.size()).equal(0)
     expect(bst.get(new ComparableString('key1'))).equal(null)
@@ -36,6 +15,8 @@ describe('Binary Search Tree', () => {
     expect(bst.get(new ComparableString('key'))).equal(null)
     expect(bst.contains(new ComparableString('key1'))).equal(true)
     expect(bst.contains(new ComparableString('key'))).equal(false)
+    bst.put(new ComparableString('key1'), 'value')
+    expect(bst.get(new ComparableString('key1'))).equal('value')
   })
 
   it('isEmpty, delete', () => {
@@ -50,11 +31,10 @@ describe('Binary Search Tree', () => {
     expect(bst.keys()).eql([])
 
     const init = Array(10).fill(0).map((el, index) => index)
+
     shuffle(init).forEach((el) => {
       bst.put(new ComparableString(`key${el}`), `value${el}`)
     })
-
-    expect(bst.size()).equal(10)
 
     expect(bst.keys()).eql(init.map((el) => new ComparableString(`key${el}`)))
   })
