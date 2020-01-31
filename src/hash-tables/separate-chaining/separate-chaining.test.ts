@@ -1,7 +1,7 @@
 import {SeparateChainingHashST} from './separate-chaining'
 import {expect} from 'chai'
 
-describe.only('Separate Chaining Hash Symbol Table', () => {
+describe('Separate Chaining Hash Symbol Table', () => {
   const HT = new SeparateChainingHashST(20)
 
   it('put', () => {
